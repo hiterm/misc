@@ -9,9 +9,7 @@ yargs(hideBin(process.argv))
       return yargs
         .positional("arg1", {
           type: "string",
-          demandOption: true,
         })
-        .demandOption(["arg1"]);
     },
     (argv) => {
       console.log(argv.arg1);
@@ -24,9 +22,7 @@ yargs(hideBin(process.argv))
       return yargs
         .positional("arg2", {
           type: "string",
-          demandOption: true,
         })
-        .demandOption(["arg2"]);
     },
     (argv) => {
       console.log(argv.arg2);

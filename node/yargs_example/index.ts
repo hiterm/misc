@@ -6,12 +6,9 @@ yargs(hideBin(process.argv))
     "* <arg1>",
     "description",
     (yargs) => {
-      return yargs
-        .positional("arg1", {
-          type: "string",
-          demandOption: true,
-        })
-        .demandOption(["arg1"]);
+      return yargs.positional("arg1", {
+        type: "string",
+      });
     },
     (argv) => {
       console.log(argv.arg1);
