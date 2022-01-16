@@ -20,11 +20,15 @@ numberStr = many1 digit
 number :: Parser Int
 number = read <$> numberStr
 
+numberList = sepBy number (char ',')
+
 parseCSV :: String -> Either ParseError [[String]]
 parseCSV input = parse csvFile "(unknown)" input
 
 parseNumber :: String -> Either ParseError Int
 parseNumber input = parse number "" input
+
+parseNumberList input = parse numberList "" input
 
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
