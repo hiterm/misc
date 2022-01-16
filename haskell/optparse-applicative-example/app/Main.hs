@@ -6,7 +6,8 @@ import Options.Applicative
 data Sample = Sample
   { hello :: String,
     quiet :: Bool,
-    enthusiasm :: Int
+    enthusiasm :: Int,
+    ps :: String
   }
 
 sample :: Parser Sample
@@ -30,6 +31,7 @@ sample =
           <> value 1
           <> metavar "INT"
       )
+    <*> argument str (metavar "MESSAGE")
 
 main :: IO ()
 main = greet =<< execParser opts
@@ -43,5 +45,5 @@ main = greet =<< execParser opts
         )
 
 greet :: Sample -> IO ()
-greet (Sample h False n) = putStrLn $ "Hello, " ++ h ++ replicate n '!'
+greet (Sample h False n m) = putStrLn $ "Hello, " ++ h ++ replicate n '!' ++ " " ++ m
 greet _ = return ()
