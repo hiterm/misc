@@ -12,8 +12,11 @@ data Operator
 
 eval :: Expression -> Int
 eval (IntegerLiteral n) = n
-eval (BinaryExpression Add l r) = eval l + eval r
-eval (BinaryExpression Multiply l r) = eval l * eval r
+eval (BinaryExpression op l r) = evalOperator op (eval l) (eval r)
+
+evalOperator :: Operator -> Int -> Int -> Int
+evalOperator Add = (+)
+evalOperator Multiply = (*)
 
 main :: IO ()
 main = putStrLn "Hello, Haskell!"
