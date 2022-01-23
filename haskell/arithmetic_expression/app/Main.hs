@@ -3,4 +3,4 @@ module Main where
 import AST
 
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = print $ eval $ BinaryExpression Add (IntegerLiteral 1) (IntegerLiteral 2)
