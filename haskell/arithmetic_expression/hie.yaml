@@ -1,4 +1,5 @@
 cradle:
   cabal:
     - path: "app/Main.hs"
+    - path: "app/AST.hs"
       component: "arithmetic-expression:exe:arithmetic-expression"
