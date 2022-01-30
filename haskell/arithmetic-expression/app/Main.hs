@@ -15,4 +15,4 @@ main = do
   let result = eval <$> exp
   case result of
     Right n -> print n
-    Left e -> print e
+    Left e -> Prelude.putStrLn $ errorBundlePretty e
