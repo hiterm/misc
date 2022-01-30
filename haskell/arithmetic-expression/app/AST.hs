@@ -7,7 +7,9 @@ data Expression
 
 data Operator
   = Add
+  | Subtract
   | Multiply
+  | Division
   deriving (Show)
 
 eval :: Expression -> Int
@@ -16,4 +18,6 @@ eval (BinaryExpression op l r) = evalOperator op (eval l) (eval r)
 
 evalOperator :: Operator -> Int -> Int -> Int
 evalOperator Add = (+)
+evalOperator Subtract = (-)
 evalOperator Multiply = (*)
+evalOperator Division = div
