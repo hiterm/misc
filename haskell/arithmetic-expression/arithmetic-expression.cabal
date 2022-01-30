@@ -40,6 +40,7 @@ executable arithmetic-expression-exe
   main-is: Main.hs
   other-modules:
       AST
+      ExpressionParser
       Paths_arithmetic_expression
   hs-source-dirs:
       app
